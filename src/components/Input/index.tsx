@@ -3,11 +3,21 @@ import classNames from 'classnames';
 
 import './Input.scss';
 
-const Input = ( props: any ) => {
+interface PropsType {
+    type: string,
+    placeholder: string,
+    className: string,
+    value?: string,
+    id?: string,
+    onChange?: any,
+    onBlur?: any
+}
+
+const Input: React.FC<PropsType>= ( { type, placeholder, className, value, onChange, onBlur, id } ) => {
     return (
-        <input type={props.type} placeholder={props.placeholder} className={classNames("input", props.className)}>
+        <input id={id} type={type} placeholder={placeholder} value={value} onChange={onChange} onBlur={onBlur} className={classNames("input", className) }>
         </input>
     );
-};
+}
 
 export default Input;

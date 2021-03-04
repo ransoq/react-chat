@@ -49,6 +49,14 @@
 
   &_mail {
     margin-bottom: 15px;
+
+    &:invalid {
+      border: 1px solid red;
+    }
+
+    &:valid {
+      border: 1px solid #00ff00;
+    }
   }
 
   &__register-link {

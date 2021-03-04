@@ -2,25 +2,41 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Block, Button, Input } from "../../../components";
 
-const RegisterForm = () => {
+const RegisterForm: React.FC<{}> = (props: any) => {
+
+    const {
+        values,
+        touched,
+        errors,
+        handleChange,
+        handleBlur,
+        handleSubmit,
+    } = props;
 
     const success: boolean = true;
+
     return (
         <>
             <div className="auth__top">
                 <h2>Регистрация</h2>
                 <p>Для входа в чат, вам нужно зарегистрироваться</p>
             </div>
-            <Block className="">
+            <Block>
                 { success ?
-                    <form>
-                        <Input placeholder={"E-mail"} className={"auth_mail"} type={"email"}/>
+                    <form onSubmit={handleSubmit}>
+                        TODO Добавить валидацию для инпута эмейла
+                        <Input
+                            id="email"
+                            placeholder={"E-mail"}
+                            className={"auth_mail"}
+                            type={"email"}
+                            value={values.email}
+                            onBlur={handleBlur}
+                            onChange={handleChange} />
                         <Input placeholder={"Логин"} className={"auth_name"} type={"name"}/>
                         <Input placeholder={"Пароль"} className={"auth_pass"} type={"password"}/>
                         <Input placeholder={"Повторите пароль"} className={"auth_pass"} type={"password"}/>
-                        <Button>
-                            Зарегистрироваться
-                        </Button>
+                        <Button>Зарегистрироваться</Button>
                         <Link to="/login" className={"auth__register-link"}>Войти в аккаунт</Link>
                     </form> :
                     <div className="auth__success-block">

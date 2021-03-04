@@ -3,9 +3,10 @@ import classNames from 'classnames';
 
 import "./button.scss";
 
-const Button = (props: any) => (
+const Button: React.FC<any> = (props: any) => (
     <button
         {...props}
+        type="submit"
         className={classNames('button', props.className)}
         />
 );

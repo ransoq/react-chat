@@ -5,21 +5,21 @@ import classNames from "classnames";
 
 import "./message.scss";
 
-interface propsType {
+interface PropsType {
     avatar: string,
     text: string,
     date: Date,
-    user: {
+    user?: {
         fullname: string
     },
     isMe?: boolean,
     isRead?: boolean
 }
 
-const Message = ({ avatar, text, date, user, isMe, isRead } : propsType) => (
+const Message: React.FC<PropsType> = ({ avatar, text, date, user, isMe, isRead }) => (
     <div className={classNames("message", {'message--isMe': isMe})}>
         <div className={"message__avatar"}>
-            <img src={avatar} alt={`Avatar ${user.fullname}`}/>
+            <img src={avatar} alt={`Avatar ${user!.fullname}`}/>
         </div>
         <div className="message__content">
             <div className="message__wrap">
