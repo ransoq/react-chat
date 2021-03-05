@@ -44,6 +44,14 @@
     }
   }
 
+  &--isTyping {
+    #{$self}__bubble {
+      background-color: #E5EDFF;
+      box-shadow: 0 5px 5px rgba(54, 116, 255, 0.1);
+      padding: 15px 15px;
+    }
+  }
+
   &__avatar {
     display: flex;
     flex-direction: column-reverse;
@@ -66,6 +74,34 @@
     max-width: 440px;
   }
 
+  &__typing {
+    span {
+      height: 8px;
+      width: 8px;
+      float: left;
+      margin: 0 4px;
+      background-color: #A6BDF0;
+      display: block;
+      border-radius: 50%;
+      opacity: 0.4;
+      @for $i from 1 through 3 {
+        &:nth-of-type(#{$i}) {
+          animation: 1s blink infinite ($i * .3333s);
+        }
+      }
+      @keyframes blink {
+        50% {
+          opacity: 1;
+        }
+      }
+      @keyframes bulge {
+        50% {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+
   &__text {
     color: #FFFFFF;
     margin: 0 auto;
@@ -77,5 +113,4 @@
     opacity: 0.4;
     line-height: 20px;
   }
-
 }

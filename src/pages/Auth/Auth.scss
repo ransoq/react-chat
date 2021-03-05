@@ -50,12 +50,14 @@
   &_mail {
     margin-bottom: 15px;
 
-    &:invalid {
+    &-error {
+      margin-bottom: 15px;
       border: 1px solid red;
     }
 
-    &:valid {
-      border: 1px solid #00ff00;
+    &-success {
+      margin-bottom: 15px;
+      border: 1px solid lawngreen;
     }
   }
 

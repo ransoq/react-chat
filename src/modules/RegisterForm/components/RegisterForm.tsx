@@ -24,18 +24,35 @@ const RegisterForm: React.FC<{}> = (props: any) => {
             <Block>
                 { success ?
                     <form onSubmit={handleSubmit}>
-                        TODO Добавить валидацию для инпута эмейла
                         <Input
-                            id="email"
                             placeholder={"E-mail"}
                             className={"auth_mail"}
                             type={"email"}
+                            id="email"
                             value={values.email}
                             onBlur={handleBlur}
-                            onChange={handleChange} />
-                        <Input placeholder={"Логин"} className={"auth_name"} type={"name"}/>
-                        <Input placeholder={"Пароль"} className={"auth_pass"} type={"password"}/>
-                        <Input placeholder={"Повторите пароль"} className={"auth_pass"} type={"password"}/>
+                            onChange={handleChange}
+                        />
+                        <Input placeholder={"Логин"}
+                               className={"auth_name"}
+                               type={"text"}
+                               value={values.name}
+                               id="name"
+                               onBlur={handleBlur}
+                               onChange={handleChange}  />
+                        <Input placeholder={"Пароль"}
+                               className={"auth_pass"}
+                               type={"password"}
+                               id="password"
+                               value={values.password}
+                               onBlur={handleBlur}
+                               onChange={handleChange} />
+                        <Input placeholder={"Повторите пароль"}
+                               className={"auth_pass"}
+                               type={"password"}
+                               value={values.password}
+                               onBlur={handleBlur}
+                               onChange={handleChange} />
                         <Button>Зарегистрироваться</Button>
                         <Link to="/login" className={"auth__register-link"}>Войти в аккаунт</Link>
                     </form> :
@@ -56,6 +73,6 @@ const RegisterForm: React.FC<{}> = (props: any) => {
             </Block>
         </>
     );
-}
+};
 
 export default RegisterForm;
