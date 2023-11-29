@@ -1,0 +1,28 @@
+{
+  "name": "react-chat-server",
+  "version": "1.0.0",
+  "description": "server for react-chat",
+  "main": "main.ts",
+  "repository": "https://github.com/ransoq/react-chat",
+  "author": "Maksim Kurdiumov",
+  "license": "MIT",
+  "dependencies": {
+    "@types/typescript": "^2.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.11.0",
+    "eslint": "^8.53.0",
+    "express": "4",
+    "node": "^21.1.0",
+    "socket.io": "^4.7.2",
+    "typescript": "^5.2.2",
+    "websocket": "^1.0.34"
+  },
+  "devDependencies": {
+    "@types/node": "^20.9.0",
+    "nodemon": "^3.0.1",
+    "ts-node": "^10.9.1"
+  },
+  "scripts": {
+    "start": "npx nodemon ./main.ts",
+    "lint": "eslint ."
+  }
+}
